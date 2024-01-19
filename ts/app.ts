@@ -87,29 +87,28 @@ class CampoMinado {
 
 		if (this.campo[i][j].value == -1) { // Se clicou numa mina, perdeu
 			gameover = GameOver.defeat;
-			alert("Você Perdeu!")
 		}
-
 		else if (this.campo[i][j].value == 0) {
 			this.RevealCells(i, j);
 		}
-		
+
+		if (this.ChecaVitoria()) gameover = GameOver.victory;
+
 		this.renderCampo('campo_minado');
 
-		this.ChecaVitoria();
+		if (gameover == GameOver.defeat) {alert("Você Perdeu!");}
+		if (gameover == GameOver.victory) {alert("Você Ganhou!");}
 	}
 
-	public ChecaVitoria() {
+	public ChecaVitoria(): boolean {
 		// passa por todas as cécluas:
-		// se célula tem value > -1 e nn foi found, retorne. se passou por todas msg de vitoria e seta gameover = victory
+		// se célula tem value > -1 e nn foi found, retorne false. se passou por todas retorna true
 		for (let i = 0; i < this.nLines; i++) {
 			for (let j = 0; j < this.nColumns; j++) {
-				if (this.campo[i][j].value > -1 && !this.campo[i][j].found) return;
+				if (this.campo[i][j].value > -1 && !this.campo[i][j].found) return false;
 			}
 		}
-
-		gameover = GameOver.victory;
-		alert("Você Ganhou!");
+		return true;
 	}
 
 	public RevealCells(i:number, j:number) {
@@ -181,7 +180,7 @@ enum GameOver {
 	defeat
 }
 
-var gameover = GameOver.no;
+var gameover: GameOver = GameOver.no;
 
 const NMINAS = 50;
 var nbands = NMINAS;

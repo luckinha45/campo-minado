@@ -1,0 +1,19 @@
+{
+  "name": "campo-minado",
+  "version": "1.0.0",
+  "description": "Um jogo de campo minado",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && sass sass:sass_out"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luckinha45/campo-minado.git"
+  },
+  "author": "luckinha45",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luckinha45/campo-minado/issues"
+  },
+  "homepage": "https://github.com/luckinha45/campo-minado#readme"
+}
