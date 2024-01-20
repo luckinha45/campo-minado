@@ -7,12 +7,18 @@
 	<link rel="stylesheet" href="sass_out/app.css">
 	<title>Campo Minado</title>
 </head>
-<body class="app">
-	<h1 class="header"> Campo Minado </h1>
-
-	<div class="bandeira_counter"> Bandeiras Disponíveis = <span id="nbands"></span> </div>
-	<div id="campo_minado" />
-
-	<script src="ts_out/app.js" type="module" />
-</body>
+<body>
+	<div class="app">
+		
+		<div class="inpts">
+			<h1 class="header"> Campo Minado </h1>
+			<label class="lbl"> Minas: </label> <input type="number" value="40" class="inpt" id="txt_minas" />
+			<label class="lbl"> Colunas: </label> <input type="number" value="21" class="inpt" id="txt_cols" />
+			<label class="lbl"> Linhas: </label> <input type="number" value="11" class="inpt" id="txt_rows" />
+			
+			<button type="button" id="btn_start" class="btn_start">Começar Jogo!</button>
+		</div>
+	</div>
+	<script src="ts_out/app.js" type="module"></script>
+</div>
 </html>
