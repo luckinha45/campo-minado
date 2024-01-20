@@ -8,5 +8,5 @@ function start_game() {
 
 	console.log(minas, cols, rows);
 	
-	location.href = `sudoku.html?minas=${minas}&cols=${cols}&rows=${rows}`;
+	location.href = `campo.html?minas=${minas}&cols=${cols}&rows=${rows}`;
 }
